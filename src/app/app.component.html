@@ -30,14 +30,14 @@ py-5
 px-6
 text-2xl
 text-white
-font-thin">Function</div>
+font-thin">{{funcT}}</div>
 <!----Number Screen-->
 <div class="w-full
 py-5
 px-6
 text-6xl
 text-white
-font-thin">100</div>
+font-thin">{{calValue | number}}</div> <!-----the number formats it to readeble by adding commas-->
 </div>
 <!----End Calculator Screen-->
 
@@ -58,7 +58,8 @@ to-red-800">
   hover:bg-opacity-20 
   text-white  
   text-xl 
-  font-light">C</button>
+  font-light"
+  (click)="onClickValue('c', 'function')">C</button>
 </div>
 <!----Percentage button------->
 <div class="w-1/4 border-r border-b border-red-400">
@@ -70,7 +71,8 @@ to-red-800">
   hover:bg-opacity-20 
   text-white 
   text-xl 
-  font-light">%</button>
+  font-light"
+  (click)="onClickValue('%', 'function')">%</button>
 </div>
 <!----Multiplication button------->
 <div class="w-1/4 border-r border-b border-red-400">
@@ -82,7 +84,8 @@ to-red-800">
   hover:bg-opacity-20 
   text-white 
   text-xl 
-  font-light">/</button>
+  font-light"
+  (click)="onClickValue('/', 'function')">/</button>
 </div>
 </div>
 <!-----Second row-->
@@ -96,7 +99,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">7</button>
+    font-light"
+    (click)="onClickValue('7', 'number')">7</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -107,7 +111,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">8</button>
+    font-light"
+    (click)="onClickValue('8', 'number')">8</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -118,7 +123,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">9</button>
+    font-light"
+    (click)="onClickValue('9', 'number')">9</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -129,7 +135,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">*</button>
+    font-light"
+    (click)="onClickValue('*', 'function')">*</button>
   </div>
 </div>
 <!----Third Row-->
@@ -143,7 +150,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">4</button>
+    font-light"
+    (click)="onClickValue('4', 'number')">4</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -154,7 +162,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">5</button>
+    font-light"
+    (click)="onClickValue('5', 'number')">5</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -165,7 +174,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">6</button>
+    font-light"
+    (click)="onClickValue('6', 'number')">6</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -176,7 +186,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">-</button>
+    font-light"
+    (click)="onClickValue('-', 'function')">-</button>
   </div>
 </div>
 <!-------Fourth Row-->
@@ -190,7 +201,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">1</button>
+    font-light"
+    (click)="onClickValue('1', 'number')">1</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -201,7 +213,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">2</button>
+    font-light"
+    (click)="onClickValue('2', 'number')">2</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -212,7 +225,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">3</button>
+    font-light"
+    (click)="onClickValue('3', 'number')">3</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -223,7 +237,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">+</button>
+    font-light"
+    (click)="onClickValue('+', 'function')">+</button>
   </div>
 </div>
 <!------Fifth Row------>
@@ -237,7 +252,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">+/-</button>
+    font-light"
+    (click)="onClickValue('+/-', 'function')">+/-</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -248,7 +264,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">0</button>
+    font-light"
+    (click)="onClickValue('0', 'number')">0</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -259,7 +276,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">.</button>
+    font-light"
+    (click)="onClickValue('.', 'function')">.</button>
   </div>
   <div class="w-1/4 border-r border-b border-red-400">
     <button class="w-full 
@@ -270,7 +288,8 @@ to-red-800">
     hover:bg-opacity-20 
     text-white 
     text-xl 
-    font-light">=</button>
+    font-light"
+    (click)="onClickValue('=', 'function')">=</button>
   </div>
 </div>
 </div>
